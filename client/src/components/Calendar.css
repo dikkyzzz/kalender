@@ -1,0 +1,178 @@
+.calendar-container {
+  background: white;
+}
+
+.fc {
+  font-family: inherit;
+}
+
+.fc .fc-button-primary {
+  background-color: #FF9F7F;
+  border: 2px solid #FF8C61;
+  color: white;
+  font-weight: 600;
+  border-radius: 12px;
+  padding: 8px 16px;
+  box-shadow: 0 2px 4px rgba(255, 140, 97, 0.3);
+}
+
+.fc .fc-button-primary:hover {
+  background-color: #FF8C61;
+  border-color: #FF7A47;
+}
+
+.fc .fc-button-primary:not(:disabled).fc-button-active,
+.fc .fc-button-primary:not(:disabled):active {
+  background-color: #FF7A47;
+  border-color: #FF6730;
+}
+
+.fc .fc-toolbar-title {
+  color: #5C4742;
+  font-weight: 700;
+  font-size: 1.5rem;
+}
+
+.fc-daygrid-day {
+  border: 2px solid #FFE5CC !important;
+  transition: all 0.2s ease;
+}
+
+.fc-daygrid-day:hover {
+  background-color: #FFF8E7 !important;
+  cursor: pointer;
+  transform: scale(1.02);
+}
+
+.fc-daygrid-day.fc-day-today {
+  background-color: #FFF0DB !important;
+  border: 2px solid #FFB88C !important;
+}
+
+.fc-daygrid-day-number {
+  color: #5C4742;
+  font-weight: 600;
+  padding: 8px !important;
+}
+
+.fc-col-header-cell {
+  background-color: #FFE5CC !important;
+  border: 2px solid #FFD4B3 !important;
+}
+
+.fc-col-header-cell-cushion {
+  color: #8B7355;
+  font-weight: 700;
+  padding: 12px 0;
+}
+
+.day-cell-wrapper {
+  width: 100%;
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  padding: 8px 4px;
+  position: relative;
+  min-height: 40px;
+  gap: 4px;
+}
+
+.day-number {
+  font-weight: 600;
+  color: #5C4742;
+  font-size: 1rem;
+}
+
+.day-indicator {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  padding: 2px 6px;
+  background: linear-gradient(135deg, #A8E6CF 0%, #7ED7A8 100%);
+  border-radius: 12px;
+  box-shadow: 0 2px 4px rgba(126, 215, 168, 0.3);
+}
+
+.indicator-text {
+  font-size: 0.7rem;
+  font-weight: 700;
+  color: #2D5F4E;
+  line-height: 1;
+  letter-spacing: 0.3px;
+  text-shadow: 0 1px 1px rgba(255, 255, 255, 0.5);
+}
+
+.indicator-count {
+  font-size: 0.65rem;
+  font-weight: 700;
+  color: #FF9F7F;
+  background: white;
+  border-radius: 50%;
+  min-width: 14px;
+  height: 14px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 0 3px;
+  border: 1.5px solid #FFE5CC;
+  box-shadow: 0 1px 2px rgba(0, 0, 0, 0.08);
+  line-height: 1;
+}
+
+.fc-daygrid-day-top {
+  display: none;
+}
+
+.fc-daygrid-day-frame {
+  min-height: 60px;
+}
+
+@media (max-width: 768px) {
+  .fc .fc-toolbar {
+    flex-direction: column;
+    gap: 10px;
+  }
+
+  .fc .fc-toolbar-title {
+    font-size: 1.2rem;
+  }
+
+  .fc .fc-button {
+    padding: 0.4rem 0.7rem;
+    font-size: 0.85rem;
+    border-radius: 10px;
+  }
+
+  .day-cell-wrapper {
+    padding: 6px 4px;
+    gap: 2px;
+  }
+
+  .day-number {
+    font-size: 0.9rem;
+  }
+
+  .day-indicator {
+    gap: 4px;
+    padding: 2px 5px;
+    border-radius: 10px;
+  }
+
+  .indicator-text {
+    font-size: 0.6rem;
+    letter-spacing: 0.2px;
+  }
+
+  .indicator-count {
+    font-size: 0.55rem;
+    min-width: 12px;
+    height: 12px;
+    padding: 0 2px;
+  }
+
+  .fc-daygrid-day-frame {
+    min-height: 50px;
+  }
+}

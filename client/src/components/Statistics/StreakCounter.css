@@ -1,0 +1,110 @@
+.streak-counter {
+  background: var(--bg-secondary);
+  border: 2px solid var(--border-color);
+  border-radius: 16px;
+  padding: 24px;
+  display: flex;
+  gap: 24px;
+  align-items: center;
+  position: relative;
+  transition: all 0.3s;
+  cursor: pointer;
+}
+
+.streak-counter:hover {
+  transform: translateY(-4px);
+  box-shadow: 0 8px 20px var(--shadow-hover);
+}
+
+.streak-counter.active .streak-flame {
+  animation: flameFlicker 1.5s infinite;
+}
+
+@keyframes flameFlicker {
+  0%, 100% { transform: scale(1) rotate(0deg); }
+  25% { transform: scale(1.1) rotate(-5deg); }
+  50% { transform: scale(0.95) rotate(5deg); }
+  75% { transform: scale(1.05) rotate(-3deg); }
+}
+
+.streak-current,
+.streak-longest {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  flex: 1;
+}
+
+.streak-flame,
+.streak-trophy {
+  font-size: 2.5rem;
+  line-height: 1;
+}
+
+.streak-info {
+  flex: 1;
+}
+
+.streak-title {
+  font-size: 0.85rem;
+  font-weight: 600;
+  color: var(--text-secondary);
+  margin-bottom: 6px;
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+}
+
+.streak-value {
+  font-size: 1.8rem;
+  font-weight: 700;
+  color: var(--text-primary);
+  line-height: 1;
+}
+
+.streak-divider {
+  width: 2px;
+  height: 60px;
+  background: var(--border-color);
+  border-radius: 2px;
+}
+
+.streak-badge {
+  position: absolute;
+  top: -12px;
+  right: 20px;
+  background: linear-gradient(135deg, #FFD700 0%, #FFA500 100%);
+  color: #5C4742;
+  padding: 6px 14px;
+  border-radius: 20px;
+  font-size: 0.75rem;
+  font-weight: 700;
+  box-shadow: 0 4px 8px rgba(255, 215, 0, 0.4);
+  animation: badgeBounce 2s infinite;
+}
+
+@keyframes badgeBounce {
+  0%, 100% { transform: translateY(0); }
+  50% { transform: translateY(-4px); }
+}
+
+@media (max-width: 768px) {
+  .streak-counter {
+    flex-direction: column;
+    gap: 16px;
+    padding: 20px;
+  }
+
+  .streak-divider {
+    width: 100%;
+    height: 2px;
+  }
+
+  .streak-flame,
+  .streak-trophy {
+    font-size: 2rem;
+  }
+
+  .streak-value {
+    font-size: 1.5rem;
+  }
+}

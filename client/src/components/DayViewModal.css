@@ -1,0 +1,190 @@
+.modal-overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background-color: rgba(92, 71, 66, 0.6);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  z-index: 1000;
+  padding: 20px;
+  backdrop-filter: blur(4px);
+}
+
+.day-view-modal {
+  background: white;
+  border-radius: 20px;
+  width: 100%;
+  max-width: 700px;
+  max-height: 85vh;
+  overflow-y: auto;
+  box-shadow: 0 8px 24px rgba(92, 71, 66, 0.2),
+              0 0 0 3px #FFE5CC;
+}
+
+.day-view-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 24px 28px;
+  border-bottom: 3px solid #FFE5CC;
+  background: linear-gradient(to bottom, #FFF8E7, white);
+}
+
+.day-view-header h2 {
+  font-size: 1.4rem;
+  color: #5C4742;
+  margin: 0;
+  font-weight: 700;
+}
+
+.close-button {
+  background: none;
+  border: none;
+  font-size: 2.2rem;
+  color: #8B7355;
+  cursor: pointer;
+  padding: 0;
+  width: 36px;
+  height: 36px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: all 0.2s;
+  border-radius: 10px;
+}
+
+.close-button:hover {
+  background-color: #FFE5CC;
+  color: #5C4742;
+}
+
+.day-view-body {
+  padding: 28px;
+}
+
+.loading-state {
+  text-align: center;
+  padding: 60px 20px;
+}
+
+.loading-spinner {
+  width: 50px;
+  height: 50px;
+  border: 4px solid #FFE5CC;
+  border-top: 4px solid #FF9F7F;
+  border-radius: 50%;
+  animation: spin 1s linear infinite;
+  margin: 0 auto 20px;
+}
+
+@keyframes spin {
+  0% { transform: rotate(0deg); }
+  100% { transform: rotate(360deg); }
+}
+
+.loading-state p {
+  color: #8B7355;
+  font-size: 1.1rem;
+  font-weight: 500;
+}
+
+.empty-state {
+  text-align: center;
+  padding: 60px 20px;
+}
+
+.empty-icon {
+  font-size: 4rem;
+  margin-bottom: 16px;
+  filter: grayscale(20%);
+}
+
+.empty-state p {
+  color: #8B7355;
+  font-size: 1.1rem;
+  margin-bottom: 24px;
+  font-weight: 500;
+}
+
+.add-progress-button-big {
+  background: linear-gradient(135deg, #FF9F7F 0%, #FFB88C 100%);
+  color: white;
+  border: none;
+  padding: 16px 32px;
+  font-size: 1.1rem;
+  font-weight: 700;
+  border-radius: 16px;
+  cursor: pointer;
+  box-shadow: 0 4px 12px rgba(255, 159, 127, 0.4);
+  transition: all 0.2s;
+}
+
+.add-progress-button-big:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 6px 16px rgba(255, 159, 127, 0.5);
+}
+
+.add-progress-button-big:active {
+  transform: translateY(0);
+}
+
+.progress-list {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+  margin-bottom: 24px;
+}
+
+.add-progress-button {
+  width: 100%;
+  background: white;
+  color: #FF9F7F;
+  border: 3px dashed #FFB88C;
+  padding: 14px 24px;
+  font-size: 1rem;
+  font-weight: 700;
+  border-radius: 16px;
+  cursor: pointer;
+  transition: all 0.2s;
+}
+
+.add-progress-button:hover {
+  background: #FFF8E7;
+  border-color: #FF9F7F;
+  color: #FF8C61;
+}
+
+@media (max-width: 768px) {
+  .day-view-modal {
+    max-height: 90vh;
+    border-radius: 15px;
+  }
+
+  .day-view-header {
+    padding: 20px 24px;
+  }
+
+  .day-view-header h2 {
+    font-size: 1.1rem;
+  }
+
+  .day-view-body {
+    padding: 24px;
+  }
+
+  .empty-state {
+    padding: 40px 20px;
+  }
+
+  .empty-icon {
+    font-size: 3rem;
+  }
+
+  .add-progress-button-big {
+    padding: 14px 28px;
+    font-size: 1rem;
+  }
+}
