@@ -1,9 +1,6 @@
 {
   "version": 2,
   "framework": "create-react-app",
-  "env": {
-    "CI": "false"
-  },
   "rewrites": [
     {
       "source": "/(.*)",
